@@ -1,13 +1,23 @@
 Package: sprintML
-Title: What the Package Does (One Line, Title Case)
+Title: Rapid EDA, Baseline Models, and Submission Files for ML Competitions
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Varun", "Singhal", , "varunsinghal2006@gmail.com", role = c("aut", "cre"))
+Description: rovides quick exploratory data analysis reports, one-line
+    cross-validated baseline classifiers (logistic regression, SVM, random
+    forest), and helpers that generate correctly formatted submission files
+    for binary classification hackathons and data science competitions.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 8.0.0
 URL: https://github.com/iVarunSinghal/sprintML
 BugReports: https://github.com/iVarunSinghal/sprintML/issues
+Imports: 
+    caret,
+    ggplot2,
+    stats,
+    utils
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

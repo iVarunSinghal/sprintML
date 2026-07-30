@@ -3,7 +3,7 @@ pkgdown: 2.2.1
 pkgdown_sha: ~
 articles:
   sprintML-intro: sprintML-intro.html
-last_built: 2026-07-30T21:26Z
+last_built: 2026-07-30T21:36Z
 urls:
   reference: https://ivarunsinghal.github.io/sprintML/reference
   article: https://ivarunsinghal.github.io/sprintML/articles

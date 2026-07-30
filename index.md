@@ -1,6 +1,54 @@
 # sprintML
 
-The goal of sprintML is to …
+The goal of **`sprintML`** is to help data scientists and hackathon
+competitors go from raw data to a strong baseline submission as fast as
+possible.
+
+When time is running out in a competition, you don’t want to waste hours
+writing boilerplate code for basic exploratory data analysis (EDA) or
+model training. `sprintML` provides a seamless pipeline to understand
+your data, handle missing values, train cross-validated machine learning
+models (like Random Forests and SVMs), and generate perfectly formatted
+submission files.
+
+### Key Features
+
+- **[`eda_report()`](https://ivarunsinghal.github.io/sprintML/reference/eda_report.md)**:
+  Instantly generate summary statistics and visualizations.
+- **[`plot_missing()`](https://ivarunsinghal.github.io/sprintML/reference/plot_missing.md)**:
+  Visually identify gaps in your dataset.
+- **[`quick_impute()`](https://ivarunsinghal.github.io/sprintML/reference/quick_impute.md)**:
+  Automatically rescue messy data by imputing missing numerical and
+  categorical values.
+- **[`quick_baseline()`](https://ivarunsinghal.github.io/sprintML/reference/quick_baseline.md)**:
+  Train a robust, cross-validated baseline model with one line of code.
+- **[`make_submission()`](https://ivarunsinghal.github.io/sprintML/reference/make_submission.md)**:
+  Safely generate your final `.csv` predictions ready for upload to
+  Kaggle or other platforms.The goal of **`sprintML`** is to help data
+  scientists and hackathon competitors go from raw data to a strong
+  baseline submission as fast as possible.
+
+When time is running out in a competition, you don’t want to waste hours
+writing boilerplate code for basic exploratory data analysis (EDA) or
+model training. `sprintML` provides a seamless pipeline to understand
+your data, handle missing values, train cross-validated machine learning
+models (like Random Forests and SVMs), and generate perfectly formatted
+submission files.
+
+### Key Features
+
+- **[`eda_report()`](https://ivarunsinghal.github.io/sprintML/reference/eda_report.md)**:
+  Instantly generate summary statistics and visualizations.
+- **[`plot_missing()`](https://ivarunsinghal.github.io/sprintML/reference/plot_missing.md)**:
+  Visually identify gaps in your dataset.
+- **[`quick_impute()`](https://ivarunsinghal.github.io/sprintML/reference/quick_impute.md)**:
+  Automatically rescue messy data by imputing missing numerical and
+  categorical values.
+- **[`quick_baseline()`](https://ivarunsinghal.github.io/sprintML/reference/quick_baseline.md)**:
+  Train a robust, cross-validated baseline model with one line of code.
+- **[`make_submission()`](https://ivarunsinghal.github.io/sprintML/reference/make_submission.md)**:
+  Safely generate your final `.csv` predictions ready for upload to
+  Kaggle or other platforms.
 
 ## Installation
 

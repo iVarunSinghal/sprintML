@@ -18,10 +18,25 @@
 #' }
 quick_baseline <- function(df, target, method = c("glm", "svmRadial", "rf"), k = 5) {
   method <- match.arg(method)
-  stopifnot(target %in% names(df))
+  if (!(target %in% names(df))) {
+    stop(
+      sprintf("Column '%s' was not found in df. Available columns: %s",
+              target, paste(names(df), collapse = ", ")),
+      call. = FALSE
+    )
+  }
 
-  df[[target]] <- factor(df[[target]])
-  stopifnot(nlevels(df[[target]]) == 2)
+  if (!is.factor(df[[target]])) {
+    df[[target]] <- as.factor(df[[target]])
+  }
+
+  if (nlevels(df[[target]]) != 2) {
+    stop(
+      sprintf("quick_baseline() only supports binary targets. '%s' has %d levels.",
+              target, nlevels(df[[target]])),
+      call. = FALSE
+    )
+  }
 
   ctrl <- caret::trainControl(method = "cv", number = k,
                               classProbs = TRUE,

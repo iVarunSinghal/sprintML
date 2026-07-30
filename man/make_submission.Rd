@@ -32,3 +32,10 @@ Invisibly returns the submission data frame.
 \description{
 Generate a Competition-Ready Submission File
 }
+\examples{
+\donttest{
+df <- data.frame(x = rnorm(30), y = factor(sample(c("a", "b"), 30, replace = TRUE)))
+train_data <- caret::train(y ~ ., data = df, method = "glm", trControl = caret::trainControl(method = "none"))
+make_submission(train_data, newdata = df, id_values = 1:30, file = tempfile())
+}
+}

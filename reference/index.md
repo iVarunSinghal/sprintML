@@ -10,3 +10,5 @@
   : Plot Missing Values by Column
 - [`quick_baseline()`](https://ivarunsinghal.github.io/sprintML/reference/quick_baseline.md)
   : Fit a Quick Baseline Classification Model
+- [`quick_impute()`](https://ivarunsinghal.github.io/sprintML/reference/quick_impute.md)
+  : Quickly Impute Missing Data

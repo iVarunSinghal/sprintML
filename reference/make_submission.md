@@ -53,6 +53,6 @@ Invisibly returns the submission data frame.
 df <- data.frame(x = rnorm(30), y = factor(sample(c("a", "b"), 30, replace = TRUE)))
 train_data <- caret::train(y ~ ., data = df, method = "glm", trControl = caret::trainControl(method = "none"))
 make_submission(train_data, newdata = df, id_values = 1:30, file = tempfile())
-#> Submission written to: /tmp/RtmpR0o2Ix/file19bd5908558d 
+#> Submission written to: /tmp/RtmpOYxwuC/file1a752cfe95a1 
 # }
 ```

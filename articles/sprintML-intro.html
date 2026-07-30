@@ -68,12 +68,11 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/iVarunSinghal/sprintML" class="external-link">sprintML</a></span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
-<h2 id="explore">Explore<a class="anchor" aria-label="anchor" href="#explore"></a>
+<h2 id="end-to-end-workflow">End-to-End Workflow<a class="anchor" aria-label="anchor" href="#end-to-end-workflow"></a>
 </h2>
-<p>First, we can generate a rapid exploratory data analysis report to
-understand the dataset:</p>
+<p>First, we can generate an EDA report and check for missing data:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Using mtcars, but changing 0/1 to words so the caret package doesn't crash!</span></span>
+<code class="sourceCode R"><span><span class="co"># Using mtcars, converting 0/1 to words for classification</span></span>
 <span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">mtcars</span></span>
 <span><span class="va">df</span><span class="op">$</span><span class="va">am</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">am</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Auto"</span>, <span class="st">"Manual"</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
@@ -95,8 +94,12 @@ understand the dataset:</p>
 <span><span class="co">#&gt;  59.38  40.62</span></span>
 <span><span class="fu"><a href="../reference/plot_missing.html">plot_missing</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code></pre></div>
 <p><img src="sprintML-intro_files/figure-html/unnamed-chunk-2-1.png" class="r-plt" alt="" width="700"></p>
+<p>Next, we handle any missing values using our automated imputer before
+training a baseline model and generating a submission file:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/quick_baseline.html">quick_baseline</a></span><span class="op">(</span><span class="va">df</span>, target <span class="op">=</span> <span class="st">"am"</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/quick_impute.html">quick_impute</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span>
+<span><span class="co">#&gt; All missing values have been successfully imputed!</span></span>
+<span><span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/quick_baseline.html">quick_baseline</a></span><span class="op">(</span><span class="va">df</span>, target <span class="op">=</span> <span class="st">"am"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Loading required package: ggplot2</span></span>
 <span><span class="co">#&gt; Loading required package: lattice</span></span>
 <span><span class="co">#&gt; Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</span></span>
@@ -120,7 +123,7 @@ understand the dataset:</p>
 <span><span class="co">#&gt;   ROC   Sens  Spec</span></span>
 <span><span class="co">#&gt;   0.95  0.9   1</span></span>
 <span><span class="fu"><a href="../reference/make_submission.html">make_submission</a></span><span class="op">(</span><span class="va">model</span>, newdata <span class="op">=</span> <span class="va">df</span>, id_values <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span>, file <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Submission written to: /tmp/Rtmpw5vyDu/file1aa333df03c9</span></span></code></pre></div>
+<span><span class="co">#&gt; Submission written to: /tmp/Rtmpt5oWGN/file1b5c6d4511c5</span></span></code></pre></div>
 </div>
   </main>
 </div>

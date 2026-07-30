@@ -5,14 +5,13 @@
 library(sprintML)
 ```
 
-## Explore
+## End-to-End Workflow
 
-First, we can generate a rapid exploratory data analysis report to
-understand the dataset:
+First, we can generate an EDA report and check for missing data:
 
 ``` r
 
-# Using mtcars, but changing 0/1 to words so the caret package doesn't crash!
+# Using mtcars, converting 0/1 to words for classification
 df <- mtcars
 df$am <- factor(df$am, levels = c(0, 1), labels = c("Auto", "Manual"))
 
@@ -37,8 +36,13 @@ plot_missing(df)
 
 ![](sprintML-intro_files/figure-html/unnamed-chunk-2-1.png)
 
+Next, we handle any missing values using our automated imputer before
+training a baseline model and generating a submission file:
+
 ``` r
 
+df <- quick_impute(df)
+#> All missing values have been successfully imputed!
 model <- quick_baseline(df, target = "am")
 #> Loading required package: ggplot2
 #> Loading required package: lattice
@@ -63,5 +67,5 @@ model <- quick_baseline(df, target = "am")
 #>   ROC   Sens  Spec
 #>   0.95  0.9   1
 make_submission(model, newdata = df, id_values = 1:nrow(df), file = tempfile())
-#> Submission written to: /tmp/Rtmpw5vyDu/file1aa333df03c9
+#> Submission written to: /tmp/Rtmpt5oWGN/file1b5c6d4511c5
 ```

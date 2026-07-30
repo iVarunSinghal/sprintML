@@ -3,11 +3,10 @@ Title: Rapid EDA, Baseline Models, and Submission Files for ML Competitions
 Version: 0.0.0.9000
 Authors@R: 
     person("Varun", "Singhal", , "varunsinghal2006@gmail.com", role = c("aut", "cre"))
-Description: rovides quick exploratory data analysis reports, one-line
+Description: Provides quick exploratory data analysis reports, one-line
     cross-validated baseline classifiers (logistic regression, SVM, random
     forest), and helpers that generate correctly formatted submission files
     for binary classification hackathons and data science competitions.
-License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 8.0.0

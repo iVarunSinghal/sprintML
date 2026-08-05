@@ -6,6 +6,8 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/iVarunSinghal/sprintML/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/iVarunSinghal/sprintML/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/iVarunSinghal/sprintML/graph/badge.svg)](https://app.codecov.io/gh/iVarunSinghal/sprintML)
 <!-- badges: end -->
 
 The goal of **`sprintML`** is to help data scientists and hackathon

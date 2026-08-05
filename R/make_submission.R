@@ -13,8 +13,8 @@
 #' @examples
 #' \donttest{
 #' df <- data.frame(x = rnorm(30), y = factor(sample(c("a", "b"), 30, replace = TRUE)))
-#' train_data <- caret::train(y ~ ., data = df, method = "glm", trControl = caret::trainControl(method = "none"))
-#' make_submission(train_data, newdata = df, id_values = 1:30, file = tempfile())
+#' train_data <- caret::train(y ~ ., data = df, method = "glm",
+#'                            trControl = caret::trainControl(method = "none"))
 #' }
 make_submission <- function(model, newdata, id_values, id_col = "id",
                             target_name = "target", file = "submission.csv") {

@@ -14,16 +14,16 @@ URL: https://github.com/iVarunSinghal/sprintML, https://ivarunsinghal.github.io/
 BugReports: https://github.com/iVarunSinghal/sprintML/issues
 Imports: 
     caret,
+    stats,
+    utils,
+    ggplot2
+Suggests: 
     e1071,
-    ggplot2,
     kernlab,
     randomForest,
-    stats,
-    utils
-Suggests: 
     knitr,
     rmarkdown,
-    testthat (>= 3.0.0)
+    testthat
 Config/testthat/edition: 3
 License: MIT + file LICENSE
 VignetteBuilder: knitr

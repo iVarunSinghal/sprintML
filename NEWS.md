@@ -1,5 +1,3 @@
-# sprintML 0.1.0
-
-* Added informative errors for mismatched targets and non-binary variables.
-* Updated `make_submission()` example to use `tempfile()` to ensure CRAN safety.
-* Initial CRAN-ready release.
+# sprintML 0.2.0
+* Added `quick_impute()` for automated numeric and categorical missing-value imputation.
+* Added test coverage for `quick_impute()`.

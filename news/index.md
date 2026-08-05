@@ -1,11 +1,9 @@
 # Changelog
 
-## sprintML 0.1.0
+## sprintML 0.2.0
 
-- Added informative errors for mismatched targets and non-binary
-  variables.
-- Updated
-  [`make_submission()`](https://ivarunsinghal.github.io/sprintML/reference/make_submission.md)
-  example to use [`tempfile()`](https://rdrr.io/r/base/tempfile.html) to
-  ensure CRAN safety.
-- Initial CRAN-ready release.
+- Added
+  [`quick_impute()`](https://ivarunsinghal.github.io/sprintML/reference/quick_impute.md)
+  for automated numeric and categorical missing-value imputation.
+- Added test coverage for
+  [`quick_impute()`](https://ivarunsinghal.github.io/sprintML/reference/quick_impute.md).
